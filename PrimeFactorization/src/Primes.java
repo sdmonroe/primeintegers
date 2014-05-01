@@ -22,7 +22,7 @@ public class Primes {
 
 		int i = 0;
 		double prev = -1;
-		print: for (double h = 1; h <= 2147483650.0; h++) {
+		print: for (double h = 1; h <= 2147483556211650.0; h++) {
 			p = Math.sqrt((24 * h) + 1);
 
 			if (p % 1 == 0) {
@@ -57,7 +57,7 @@ public class Primes {
 		try {
 			Date stop = new Date();
 			sb.append("\n\nStart time: " + start + "\nEnd time: " + stop);
-			sb.append("\n\nFormat\ncounter:prime:hour:diff");
+			sb.append("\n\nFormat:\ncounter:prime:hour:diff");
 			File f = new File(System.getProperty("user.home") + File.separator + "primes.txt");
 			FileUtils.writeStringToFile(f, sb.toString());
 
@@ -82,9 +82,9 @@ public class Primes {
 					// the root of the space isn't part of the code
 					if (sz > 0) {
 						if (multiple && codeSb.length() > 4 && codeSb.charAt(codeSb.length() - 4) == '-') {
-							codeSb.setCharAt(codeSb.length() - 4, '*');
+							codeSb.setCharAt(codeSb.length() - 4, '[');
 							codeSb.append((hour + "").charAt((hour + "").length() - 1));
-							codeSb.append('*');
+							codeSb.append(']');
 							codeSb.append('\n');
 						}
 						else {
